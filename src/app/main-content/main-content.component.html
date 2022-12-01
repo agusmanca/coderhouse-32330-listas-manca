@@ -1,0 +1,48 @@
+<div class="album py-5">
+    <div class="container">    
+
+        <div class="h1"> Lista Alumnos:</div>
+
+        <div class="main-wrapper">
+            <div class="card card-style" style="width: 18rem;" *ngFor="let alumno of alumnos">
+
+              <div [ngSwitch]="alumno.pais">
+                <div *ngSwitchCase="'Argentina'">
+                  <img [src]="banderas.argentina" 
+                     class="card-img-top" 
+                     alt="Argentina">
+                </div>
+                <div *ngSwitchCase="'Estados Unidos'">
+                  <img [src]="banderas.estadosUnidos" 
+                       class="card-img-top" 
+                       alt="Estados Unidos">
+                </div>
+                <div *ngSwitchCase="'Mexico'">
+                  <img [src]="banderas.mexico" 
+                       class="card-img-top" 
+                       alt="Mexico">
+                </div>
+                <div *ngSwitchCase="'Peru'">
+                  <img [src]="banderas.peru" 
+                       class="card-img-top" 
+                       alt="Peru">
+                </div>
+
+                <div *ngSwitchDefault="">
+                  <img [src]="banderas.default" 
+                       class="card-img-top" 
+                       alt="">
+                </div>
+              </div>   
+
+              <div class="card-body">
+                <h5 class="card-title">{{ alumno.nombre + ' ' + alumno.apellido}}</h5>
+                <p class="card-text">Edad: {{ alumno.edad }} años.</p>
+                <p class="card-text">Fecha Nacimeinto: {{ alumno.fechaNacimiento | date:'MMM d, y'}} </p>
+                <p class="card-text">Pais: <span [ngClass]="alumno.pais=='Argentina' ? 'pais-style' : ''"> {{ alumno.pais | uppercase}} </span>. </p>
+              </div>
+            </div>
+        </div>
+
+    </div>
+  </div>

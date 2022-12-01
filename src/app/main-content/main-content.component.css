@@ -1,0 +1,15 @@
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-style {
+    margin: 20px;
+}
+
+.pais-style {
+    color: blue;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
